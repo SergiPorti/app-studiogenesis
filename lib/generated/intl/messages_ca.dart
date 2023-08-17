@@ -22,6 +22,48 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "helloWorld": MessageLookupByLibrary.simpleMessage("HolaMon")
+        "backToLoginPage": MessageLookupByLibrary.simpleMessage(
+            "Tornar a la pàgina de sessió"),
+        "birthdate": MessageLookupByLibrary.simpleMessage("Data de naixement"),
+        "birthdatePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Escull la teva data"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailError":
+            MessageLookupByLibrary.simpleMessage("L\'email no és vàlid"),
+        "emailPlaceholder":
+            MessageLookupByLibrary.simpleMessage("example@gmail.com"),
+        "enterEmailOrUsername": MessageLookupByLibrary.simpleMessage(
+            "Introdueix el teu nom d\'usuari o email"),
+        "enterPassword": MessageLookupByLibrary.simpleMessage(
+            "Introdueix la teva contrasenya"),
+        "errorPasswordLength": MessageLookupByLibrary.simpleMessage(
+            "La contrasenya ha de tenir més de 8 caràcters"),
+        "errorValidatePassword": MessageLookupByLibrary.simpleMessage(
+            "Les contrasenyes no coincidèixen"),
+        "fieldCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
+            "Aquest camp no pot estar buit"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filtrar"),
+        "goBack": MessageLookupByLibrary.simpleMessage("Tornar enrere"),
+        "helloWorld": MessageLookupByLibrary.simpleMessage("HolaMon"),
+        "lastname": MessageLookupByLibrary.simpleMessage("Cognom"),
+        "lastnamePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Escriu el teu cognom"),
+        "name": MessageLookupByLibrary.simpleMessage("Nomb"),
+        "namePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Escriu el teu nom"),
+        "or": MessageLookupByLibrary.simpleMessage("o"),
+        "password": MessageLookupByLibrary.simpleMessage("Contrasenya"),
+        "repeatPassword": MessageLookupByLibrary.simpleMessage(
+            "Escriu de nou la teva contrasenya"),
+        "searchTicket": MessageLookupByLibrary.simpleMessage("Buscar tiquet"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Iniciar sessió"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Registrar-se"),
+        "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
+            "Alguna cosa ha anat malament 😣"),
+        "username": MessageLookupByLibrary.simpleMessage("Nom d\'usuari"),
+        "usernameExample":
+            MessageLookupByLibrary.simpleMessage("ExempleUsuari"),
+        "usernameOrEmail":
+            MessageLookupByLibrary.simpleMessage("Nom d\'usuari o email")
       };
 }

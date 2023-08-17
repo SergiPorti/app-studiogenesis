@@ -22,6 +22,49 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "helloWorld": MessageLookupByLibrary.simpleMessage("HolaMundo")
+        "backToLoginPage": MessageLookupByLibrary.simpleMessage(
+            "Volver a la página de sesión"),
+        "birthdate":
+            MessageLookupByLibrary.simpleMessage("Fecha de nacimiento"),
+        "birthdatePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Elige tu fecha"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailError":
+            MessageLookupByLibrary.simpleMessage("El email no es válido"),
+        "emailPlaceholder":
+            MessageLookupByLibrary.simpleMessage("example@gmail.com"),
+        "enterEmailOrUsername": MessageLookupByLibrary.simpleMessage(
+            "Introduce tu nombre de usuario o email"),
+        "enterPassword":
+            MessageLookupByLibrary.simpleMessage("Introduce tu contraseña"),
+        "errorPasswordLength": MessageLookupByLibrary.simpleMessage(
+            "La contraseña debe tener más de 8 carácteres"),
+        "errorValidatePassword": MessageLookupByLibrary.simpleMessage(
+            "Las contraseñas no coinciden"),
+        "fieldCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
+            "Este campo no puede estar vacío"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filtrar"),
+        "goBack": MessageLookupByLibrary.simpleMessage("Volver atrás"),
+        "helloWorld": MessageLookupByLibrary.simpleMessage("HolaMundo"),
+        "lastname": MessageLookupByLibrary.simpleMessage("Apellido"),
+        "lastnamePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Escribe tu apellido"),
+        "name": MessageLookupByLibrary.simpleMessage("Nombre"),
+        "namePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Escribe tu nombre"),
+        "or": MessageLookupByLibrary.simpleMessage("o"),
+        "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+        "repeatPassword": MessageLookupByLibrary.simpleMessage(
+            "Escribe de nuevo la contraseña"),
+        "searchTicket": MessageLookupByLibrary.simpleMessage("Buscar tiquet"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Registrarse"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Algo ha ido mal 😣"),
+        "username": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
+        "usernameExample":
+            MessageLookupByLibrary.simpleMessage("EjemploUsuario"),
+        "usernameOrEmail":
+            MessageLookupByLibrary.simpleMessage("Nombre de usuario o email")
       };
 }

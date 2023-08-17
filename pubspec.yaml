@@ -36,7 +36,13 @@ dependencies:
   shared_preferences: ^2.1.2
   get_it: ^7.2.0
   dartz: ^0.10.1
+  http: ^1.1.0
 
+  #ui
+  flutter_datetime_picker_plus: ^2.0.1
+  cached_network_image: ^3.2.3
+  animated_bottom_navigation_bar: ^1.2.0
+  
   #Navigation
   go_router: ^10.0.0
 

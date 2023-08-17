@@ -22,6 +22,47 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "helloWorld": MessageLookupByLibrary.simpleMessage("HelloWorld")
+        "backToLoginPage":
+            MessageLookupByLibrary.simpleMessage("Back to login page"),
+        "birthdate": MessageLookupByLibrary.simpleMessage("Birthdate"),
+        "birthdatePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Choose your birthdate"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailError": MessageLookupByLibrary.simpleMessage("Invalid email"),
+        "emailPlaceholder":
+            MessageLookupByLibrary.simpleMessage("example@gmail.com"),
+        "enterEmailOrUsername": MessageLookupByLibrary.simpleMessage(
+            "Enter your username or email"),
+        "enterPassword":
+            MessageLookupByLibrary.simpleMessage("Introduce your password"),
+        "errorPasswordLength": MessageLookupByLibrary.simpleMessage(
+            "Password must have more than 8 letters"),
+        "errorValidatePassword":
+            MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "fieldCanNotBeEmpty":
+            MessageLookupByLibrary.simpleMessage("This field can not be empty"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+        "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
+        "helloWorld": MessageLookupByLibrary.simpleMessage("HelloWorld"),
+        "lastname": MessageLookupByLibrary.simpleMessage("Lastname"),
+        "lastnamePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Write your lastname"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "namePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Write your name"),
+        "or": MessageLookupByLibrary.simpleMessage("or"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "repeatPassword":
+            MessageLookupByLibrary.simpleMessage("Repeat your password"),
+        "searchTicket": MessageLookupByLibrary.simpleMessage("Search ticket"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong 😣"),
+        "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "usernameExample":
+            MessageLookupByLibrary.simpleMessage("ExampleUsername"),
+        "usernameOrEmail":
+            MessageLookupByLibrary.simpleMessage("Username or email")
       };
 }
