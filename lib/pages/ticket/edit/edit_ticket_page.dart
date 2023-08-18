@@ -1,11 +1,13 @@
+import 'package:app_studiogenesis/di/locator.dart';
 import 'package:app_studiogenesis/domain/models/ticket/ticket.dart';
 import 'package:app_studiogenesis/generated/l10n.dart';
+import 'package:app_studiogenesis/navigation/navigation_handler.dart';
 import 'package:app_studiogenesis/pages/language/language_manager.dart';
 import 'package:app_studiogenesis/pages/ticket/edit/edit_ticket_manager.dart';
+import 'package:app_studiogenesis/pages/widgets/error/custom_error_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/input_text.dart';
 import 'package:app_studiogenesis/pages/widgets/popup/default_popup.dart';
 import 'package:app_studiogenesis/pages/widgets/ticket/ticket_card.dart';
-import 'package:app_studiogenesis/pages/widgets/error/custom_error_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_colors.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_dimensions.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/main_button.dart';
@@ -121,7 +123,7 @@ class EditTicketPage extends StatelessWidget {
                 title: S.of(context).congratulations,
                 description: message,
                 mainButtonText: S.of(context).goBack, mainbuttonPressed: () {
-              Navigator.pop(context);
+              locator<NavigationHandler>().goToHomePage(context);
             });
 
           default:

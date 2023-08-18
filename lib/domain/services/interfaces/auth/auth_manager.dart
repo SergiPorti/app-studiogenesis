@@ -311,7 +311,7 @@ class AuthManager with ChangeNotifier {
     final res = await authService.updatePassword(
         password: _passwordToLoginOrRegister,
         passwordVerified: _passwordToRegisterVerification);
-
+  
     res.fold(
         (l) => _currentState =
             ApiErrorState(message: l.message, serverError: l.extensionMessage),
