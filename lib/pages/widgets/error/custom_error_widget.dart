@@ -4,11 +4,11 @@ import 'package:app_studiogenesis/pages/widgets/utils/main_button.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class TicketErrorWidget extends StatelessWidget {
+class CustomErrorWidget extends StatelessWidget {
   final String message;
   final String? extensionMessage;
   final Function onButtonPressed;
-  const TicketErrorWidget(
+  const CustomErrorWidget(
       {required this.message,
       this.extensionMessage,
       required this.onButtonPressed,

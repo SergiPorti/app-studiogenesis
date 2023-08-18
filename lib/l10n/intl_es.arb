@@ -8,6 +8,8 @@
     "usernameOrEmail": "Nombre de usuario o email",
     "password": "Contraseña",
     "enterPassword": "Introduce tu contraseña",
+    "enterNewPassword": "Introduce tu nuevo contraseña",
+    "currentPassword": "Contraseña actual",
     "name": "Nombre",
     "namePlaceholder": "Escribe tu nombre",
     "lastname": "Apellido",
@@ -47,5 +49,6 @@
     "editPersonalInformation": "Editar información personal",
     "security": "Seguridad",
     "passwordUpdate": "Restablecer la contraseña",
-    "logout": "Cerrar sesión"
+    "logout": "Cerrar sesión",
+    "passwordIncorrect": "Contraseña incorrecta"
 }

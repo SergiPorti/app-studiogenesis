@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "congratulations":
             MessageLookupByLibrary.simpleMessage("¡Felicidades!"),
         "createTicket": MessageLookupByLibrary.simpleMessage("Creat tiquet"),
+        "currentPassword":
+            MessageLookupByLibrary.simpleMessage("Contraseña actual"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
         "editPersonalInformation":
             MessageLookupByLibrary.simpleMessage("Editar información personal"),
@@ -44,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("example@gmail.com"),
         "enterEmailOrUsername": MessageLookupByLibrary.simpleMessage(
             "Introduce tu nombre de usuario o email"),
+        "enterNewPassword": MessageLookupByLibrary.simpleMessage(
+            "Introduce tu nuevo contraseña"),
         "enterPassword":
             MessageLookupByLibrary.simpleMessage("Introduce tu contraseña"),
         "errorPasswordLength": MessageLookupByLibrary.simpleMessage(
@@ -67,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Escribe tu nombre"),
         "or": MessageLookupByLibrary.simpleMessage("o"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+        "passwordIncorrect":
+            MessageLookupByLibrary.simpleMessage("Contraseña incorrecta"),
         "passwordUpdate":
             MessageLookupByLibrary.simpleMessage("Restablecer la contraseña"),
         "personalSettings":

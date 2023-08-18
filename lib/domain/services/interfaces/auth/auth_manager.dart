@@ -7,7 +7,9 @@ class AuthManager with ChangeNotifier {
   AuthManager({bool isLoginOrRegister = true, bool isPasswordUpdate = false}) {
     if (isLoginOrRegister) {
       _init();
-    } else if(!isPasswordUpdate) {
+    } else if (isPasswordUpdate) {
+      _getPassword();
+    } else {
       _getUser();
     }
   }
@@ -28,6 +30,7 @@ class AuthManager with ChangeNotifier {
   String _lastname = "";
   String _birthDate = "";
   String _password = "";
+  String _passwordUpdateValidation = "";
 
   bool _errorPasswordLength = false;
   bool _emailError = false;
@@ -36,6 +39,7 @@ class AuthManager with ChangeNotifier {
   bool _errorLastname = false;
   bool _errorName = false;
   bool _errorBirthdate = false;
+  bool _errorPasswordIncorrect = false;
 
   AuthManagerState get currentState => _currentState;
 
@@ -46,6 +50,7 @@ class AuthManager with ChangeNotifier {
   String get password => _password;
 
   bool get errorPasswordLength => _errorPasswordLength;
+  bool get errorPasswordIncorrect => _errorPasswordIncorrect;
   bool get emailError => _emailError;
   bool get errorPasswordMatch => _errorPasswordMatch;
   bool get errorUsername => _errorUsername;
@@ -68,6 +73,12 @@ class AuthManager with ChangeNotifier {
     } else {
       _me();
     }
+  }
+
+  _getPassword() {
+    _getPasswordFromLocal();
+    _currentState = UpdatePasswordState();
+    notifyListeners();
   }
 
   _getUser() async {
@@ -99,7 +110,7 @@ class AuthManager with ChangeNotifier {
         (r) {
       _saveInformationInLocal(
           token: r.token, username: r.user.username, email: r.user.email);
-          _savePasswordInLocal();
+      _savePasswordInLocal();
       _currentState = UserVerifiedState(r.user);
     });
     notifyListeners();
@@ -164,6 +175,10 @@ class AuthManager with ChangeNotifier {
     _usernameToLoginOrRegister = value;
   }
 
+  onUpdatePasswordChanged(String value) {
+    _passwordUpdateValidation = value;
+  }
+
   _checkIfEmailIsValid() {
     return RegExp(
             r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
@@ -176,7 +191,12 @@ class AuthManager with ChangeNotifier {
 
   onRegisterButtonPressed() async {
     _checkIfNameLastnameBirthdaterUsernameIsNullOrEmpty();
-    if (_errorName || _errorLastname || _errorUsername || _errorBirthdate) {
+    if (_errorName ||
+        _errorLastname ||
+        _errorUsername ||
+        _errorBirthdate ||
+        _errorPasswordLength ||
+        _errorPasswordMatch) {
       notifyListeners();
       return null;
     }
@@ -277,15 +297,48 @@ class AuthManager with ChangeNotifier {
     });
   }
 
+  updatePassword() async {
+    if (_checkUpdatePassword()) {
+      notifyListeners();
+      return null;
+    }
+
+    if (_errorPasswordLength || _errorPasswordMatch) {
+      notifyListeners();
+      return null;
+    }
+
+    final res = await authService.updatePassword(
+        password: _passwordToLoginOrRegister,
+        passwordVerified: _passwordToRegisterVerification);
+
+    res.fold(
+        (l) => _currentState =
+            ApiErrorState(message: l.message, serverError: l.extensionMessage),
+        (r) {
+      _savePasswordInLocal();
+      _currentState = UserVerifiedState(r);
+    });
+    notifyListeners();
+  }
+
   _savePasswordInLocal() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('password', _passwordToLoginOrRegister);
   }
 
-  getPasswordFromLocal() async {
+  _getPasswordFromLocal() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     _password = prefs.getString('password')!;
-    notifyListeners();
+  }
+
+  _checkUpdatePassword() {
+    if (_password != _passwordUpdateValidation) {
+      _errorPasswordIncorrect = true;
+    } else {
+      _errorPasswordIncorrect = false;
+    }
+    return _errorPasswordIncorrect;
   }
 
   _saveInformationInLocal(
@@ -321,6 +374,8 @@ class AuthManager with ChangeNotifier {
 }
 
 abstract class AuthManagerState {}
+
+class UpdatePasswordState extends AuthManagerState {}
 
 class LoadingState extends AuthManagerState {}
 

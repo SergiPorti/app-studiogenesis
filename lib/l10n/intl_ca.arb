@@ -8,6 +8,8 @@
     "usernameOrEmail": "Nom d'usuari o email",
     "password": "Contrasenya",
     "enterPassword": "Introdueix la teva contrasenya",
+    "enterNewPassword": "Introdueix la teva nova contrasenya",
+    "currentPassword": "Contrasenya actual",
     "name": "Nomb",
     "namePlaceholder": "Escriu el teu nom",
     "lastname": "Cognom",
@@ -47,5 +49,6 @@
     "editPersonalInformation": "Editar informació personal",
     "security": "Seguretat",
     "passwordUpdate": "Restablir contrasenya",
-    "logout": "Tancar sessió"
+    "logout": "Tancar sessió",
+    "passwordIncorrect": "Contrasenya incorrecta"
 }

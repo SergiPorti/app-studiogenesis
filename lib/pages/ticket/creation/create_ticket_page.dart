@@ -4,9 +4,9 @@ import 'package:app_studiogenesis/generated/l10n.dart';
 import 'package:app_studiogenesis/navigation/navigation_handler.dart';
 import 'package:app_studiogenesis/pages/language/language_manager.dart';
 import 'package:app_studiogenesis/pages/ticket/creation/create_ticket_manager.dart';
+import 'package:app_studiogenesis/pages/widgets/error/custom_error_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/ticket/create_ticket_form.dart';
 import 'package:app_studiogenesis/pages/widgets/ticket/ticket_card.dart';
-import 'package:app_studiogenesis/pages/widgets/ticket/ticket_error_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_colors.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_dimensions.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/main_button.dart';
@@ -113,7 +113,7 @@ class _CreateTicketPageState extends State<CreateTicketPage> {
               final String? extensionMessage =
                   (manager.currentState as OnTicketErrorCreated)
                       .extensionMessage;
-              return TicketErrorWidget(
+              return CustomErrorWidget(
                   message: message,
                   extensionMessage: extensionMessage,
                   onButtonPressed: () {

@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Escull la nova data"),
         "congratulations": MessageLookupByLibrary.simpleMessage("Felicitats!"),
         "createTicket": MessageLookupByLibrary.simpleMessage("Crear tiquet"),
+        "currentPassword":
+            MessageLookupByLibrary.simpleMessage("Contrasenya actual"),
         "description": MessageLookupByLibrary.simpleMessage("Descripció"),
         "editPersonalInformation":
             MessageLookupByLibrary.simpleMessage("Editar informació personal"),
@@ -42,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("example@gmail.com"),
         "enterEmailOrUsername": MessageLookupByLibrary.simpleMessage(
             "Introdueix el teu nom d\'usuari o email"),
+        "enterNewPassword": MessageLookupByLibrary.simpleMessage(
+            "Introdueix la teva nova contrasenya"),
         "enterPassword": MessageLookupByLibrary.simpleMessage(
             "Introdueix la teva contrasenya"),
         "errorPasswordLength": MessageLookupByLibrary.simpleMessage(
@@ -66,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Escriu el teu nom"),
         "or": MessageLookupByLibrary.simpleMessage("o"),
         "password": MessageLookupByLibrary.simpleMessage("Contrasenya"),
+        "passwordIncorrect":
+            MessageLookupByLibrary.simpleMessage("Contrasenya incorrecta"),
         "passwordUpdate":
             MessageLookupByLibrary.simpleMessage("Restablir contrasenya"),
         "personalSettings":

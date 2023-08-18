@@ -130,6 +130,26 @@ class S {
     );
   }
 
+  /// `Introduce your new password`
+  String get enterNewPassword {
+    return Intl.message(
+      'Introduce your new password',
+      name: 'enterNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current password`
+  String get currentPassword {
+    return Intl.message(
+      'Current password',
+      name: 'currentPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Name`
   String get name {
     return Intl.message(
@@ -525,6 +545,16 @@ class S {
     return Intl.message(
       'Logout',
       name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect password`
+  String get passwordIncorrect {
+    return Intl.message(
+      'Incorrect password',
+      name: 'passwordIncorrect',
       desc: '',
       args: [],
     );

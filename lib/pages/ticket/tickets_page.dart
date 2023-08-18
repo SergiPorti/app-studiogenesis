@@ -1,9 +1,9 @@
 import 'package:app_studiogenesis/domain/models/ticket/ticket.dart';
-import 'package:app_studiogenesis/pages/ticket/ticket_manager.dart';
 import 'package:app_studiogenesis/pages/language/language_manager.dart';
+import 'package:app_studiogenesis/pages/ticket/ticket_manager.dart';
+import 'package:app_studiogenesis/pages/widgets/error/custom_error_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/filter/search_tickets_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/ticket/ticket_card.dart';
-import 'package:app_studiogenesis/pages/widgets/ticket/ticket_error_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,12 +31,12 @@ class TicketsPage extends StatelessWidget {
               final String? extensionMessage =
                   (manager.currentState as OnErrorState).extensionMessage;
 
-              return TicketErrorWidget(
+              return CustomErrorWidget(
                 message: message,
                 extensionMessage: extensionMessage,
                 onButtonPressed: () => manager.getTickets(),
               );
-              
+
             case OnTicketsAchievedState:
               final List<Ticket> tickets =
                   (manager.currentState as OnTicketsAchievedState).tickets;

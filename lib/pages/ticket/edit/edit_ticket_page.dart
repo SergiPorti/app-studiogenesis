@@ -5,7 +5,7 @@ import 'package:app_studiogenesis/pages/ticket/edit/edit_ticket_manager.dart';
 import 'package:app_studiogenesis/pages/widgets/input_text.dart';
 import 'package:app_studiogenesis/pages/widgets/popup/default_popup.dart';
 import 'package:app_studiogenesis/pages/widgets/ticket/ticket_card.dart';
-import 'package:app_studiogenesis/pages/widgets/ticket/ticket_error_widget.dart';
+import 'package:app_studiogenesis/pages/widgets/error/custom_error_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_colors.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_dimensions.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/main_button.dart';
@@ -109,7 +109,7 @@ class EditTicketPage extends StatelessWidget {
                 (manager.currentState as OnErrorUpdate).message;
             final String? extensionMessage =
                 (manager.currentState as OnErrorUpdate).extensionMessage;
-            return TicketErrorWidget(
+            return CustomErrorWidget(
               message: message,
               extensionMessage: extensionMessage,
               onButtonPressed: () => Navigator.maybePop(context),
