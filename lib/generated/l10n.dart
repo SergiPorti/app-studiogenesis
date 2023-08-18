@@ -329,6 +329,206 @@ class S {
       args: [],
     );
   }
+
+  /// `Write the new name`
+  String get writeNewTicketName {
+    return Intl.message(
+      'Write the new name',
+      name: 'writeNewTicketName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket name`
+  String get ticketName {
+    return Intl.message(
+      'Ticket name',
+      name: 'ticketName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write the new description`
+  String get writeNewDescription {
+    return Intl.message(
+      'Write the new description',
+      name: 'writeNewDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Event date`
+  String get eventDate {
+    return Intl.message(
+      'Event date',
+      name: 'eventDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose the new date`
+  String get chooseeEventDate {
+    return Intl.message(
+      'Choose the new date',
+      name: 'chooseeEventDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket price`
+  String get ticketPrice {
+    return Intl.message(
+      'Ticket price',
+      name: 'ticketPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write the new price`
+  String get writeTicketPrice {
+    return Intl.message(
+      'Write the new price',
+      name: 'writeTicketPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update ticket`
+  String get updateTicket {
+    return Intl.message(
+      'Update ticket',
+      name: 'updateTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preview`
+  String get preview {
+    return Intl.message(
+      'Preview',
+      name: 'preview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit ticket`
+  String get editTicket {
+    return Intl.message(
+      'Edit ticket',
+      name: 'editTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congratulations!`
+  String get congratulations {
+    return Intl.message(
+      'Congratulations!',
+      name: 'congratulations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Everithing went well 😊!`
+  String get everithingWentWell {
+    return Intl.message(
+      'Everithing went well 😊!',
+      name: 'everithingWentWell',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create ticket`
+  String get createTicket {
+    return Intl.message(
+      'Create ticket',
+      name: 'createTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal settings`
+  String get personalSettings {
+    return Intl.message(
+      'Personal settings',
+      name: 'personalSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit personal information`
+  String get editPersonalInformation {
+    return Intl.message(
+      'Edit personal information',
+      name: 'editPersonalInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Security`
+  String get security {
+    return Intl.message(
+      'Security',
+      name: 'security',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password update`
+  String get passwordUpdate {
+    return Intl.message(
+      'Password update',
+      name: 'passwordUpdate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

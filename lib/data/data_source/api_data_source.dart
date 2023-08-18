@@ -87,4 +87,43 @@ class ApiDataSource implements ApiDataSourceInterface {
 
     return res.fold((l) => Left(l), (r) => Right(r["message"] as String));
   }
+
+  @override
+  Future<Either<Failure, String>> updateTicket(Ticket ticket) async {
+    final Map<String, dynamic> map = Ticket.toJson(ticket);
+    final res = await apiClient.post("tickets/update", map);
+
+    return res.fold((l) => Left(l), (r) => Right(r["message"] as String));
+  }
+
+  @override
+  Future<Either<Failure, Ticket>> createTicket(
+      Map<String, dynamic> ticketData) async {
+    final res = await apiClient.post("tickets/create", ticketData);
+
+    return res.fold((l) => Left(l), (r) {
+      final Ticket ticket = Ticket.fromJson(r["ticket"]);
+      return Right(ticket);
+    });
+  }
+  
+  @override
+  Future<Either<Failure, User>> updatePassword(Map<String, String> userData) async {
+    final res = await apiClient.post("update-password", userData);
+
+    return res.fold((l) => Left(l), (r) {
+      final User user = User.fromJson(r["user"]);
+      return Right(user);
+    });
+  }
+  
+  @override
+  Future<Either<Failure, User>> updateUser(Map<String, String> userData) async {
+    final res = await apiClient.post("update", userData);
+
+    return res.fold((l) => Left(l), (r) {
+      final User user = User.fromJson(r["user"]);
+      return Right(user);
+    });
+  }
 }

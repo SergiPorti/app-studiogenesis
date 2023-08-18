@@ -69,7 +69,7 @@ class _InputTextState extends State<InputText> {
                   TextStyle(
                       fontSize: AppDimensions.main,
                       fontWeight: FontWeight.w600)),
-          SizedBox(height: AppDimensions.xmain)
+          SizedBox(height: AppDimensions.small)
         ],
         TextFormField(
           obscureText: widget.obscureText,

@@ -1,5 +1,6 @@
 class AppDimensions {
   static double main = 16;
+  static double titleSize = 18;
   static double label = 14;
   static double xmain = 12;
   static double small = 8;

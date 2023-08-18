@@ -27,6 +27,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthdate": MessageLookupByLibrary.simpleMessage("Birthdate"),
         "birthdatePlaceholder":
             MessageLookupByLibrary.simpleMessage("Choose your birthdate"),
+        "chooseeEventDate":
+            MessageLookupByLibrary.simpleMessage("Choose the new date"),
+        "congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations!"),
+        "createTicket": MessageLookupByLibrary.simpleMessage("Create ticket"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "editPersonalInformation":
+            MessageLookupByLibrary.simpleMessage("Edit personal information"),
+        "editTicket": MessageLookupByLibrary.simpleMessage("Edit ticket"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailError": MessageLookupByLibrary.simpleMessage("Invalid email"),
         "emailPlaceholder":
@@ -39,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password must have more than 8 letters"),
         "errorValidatePassword":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "eventDate": MessageLookupByLibrary.simpleMessage("Event date"),
+        "everithingWentWell":
+            MessageLookupByLibrary.simpleMessage("Everithing went well 😊!"),
         "fieldCanNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("This field can not be empty"),
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
@@ -47,22 +59,39 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastname": MessageLookupByLibrary.simpleMessage("Lastname"),
         "lastnamePlaceholder":
             MessageLookupByLibrary.simpleMessage("Write your lastname"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "namePlaceholder":
             MessageLookupByLibrary.simpleMessage("Write your name"),
         "or": MessageLookupByLibrary.simpleMessage("or"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordUpdate":
+            MessageLookupByLibrary.simpleMessage("Password update"),
+        "personalSettings":
+            MessageLookupByLibrary.simpleMessage("Personal settings"),
+        "preview": MessageLookupByLibrary.simpleMessage("Preview"),
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat your password"),
         "searchTicket": MessageLookupByLibrary.simpleMessage("Search ticket"),
+        "security": MessageLookupByLibrary.simpleMessage("Security"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong 😣"),
+        "ticketName": MessageLookupByLibrary.simpleMessage("Ticket name"),
+        "ticketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
+        "updateTicket": MessageLookupByLibrary.simpleMessage("Update ticket"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameExample":
             MessageLookupByLibrary.simpleMessage("ExampleUsername"),
         "usernameOrEmail":
-            MessageLookupByLibrary.simpleMessage("Username or email")
+            MessageLookupByLibrary.simpleMessage("Username or email"),
+        "writeNewDescription":
+            MessageLookupByLibrary.simpleMessage("Write the new description"),
+        "writeNewTicketName":
+            MessageLookupByLibrary.simpleMessage("Write the new name"),
+        "writeTicketPrice":
+            MessageLookupByLibrary.simpleMessage("Write the new price")
       };
 }

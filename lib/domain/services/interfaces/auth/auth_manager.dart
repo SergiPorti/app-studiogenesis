@@ -4,13 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthManager with ChangeNotifier {
-  AuthManager() {
-    _init();
+  AuthManager({bool isLoginOrRegister = true, bool isPasswordUpdate = false}) {
+    if (isLoginOrRegister) {
+      _init();
+    } else if(!isPasswordUpdate) {
+      _getUser();
+    }
   }
 
   final AuthService authService = AuthService();
 
   AuthManagerState _currentState = LoadingState();
+
+  User? _user;
 
   String? _username;
   String? _email;
@@ -21,6 +27,7 @@ class AuthManager with ChangeNotifier {
   String _name = "";
   String _lastname = "";
   String _birthDate = "";
+  String _password = "";
 
   bool _errorPasswordLength = false;
   bool _emailError = false;
@@ -32,8 +39,11 @@ class AuthManager with ChangeNotifier {
 
   AuthManagerState get currentState => _currentState;
 
+  User? get user => _user;
+
   String? get username => _username;
   String? get email => _email;
+  String get password => _password;
 
   bool get errorPasswordLength => _errorPasswordLength;
   bool get emailError => _emailError;
@@ -60,6 +70,13 @@ class AuthManager with ChangeNotifier {
     }
   }
 
+  _getUser() async {
+    final res = await authService.me();
+
+    res.fold((l) => null, (r) => _user = r);
+    notifyListeners();
+  }
+
   _me() async {
     final res = await authService.me();
 
@@ -82,6 +99,7 @@ class AuthManager with ChangeNotifier {
         (r) {
       _saveInformationInLocal(
           token: r.token, username: r.user.username, email: r.user.email);
+          _savePasswordInLocal();
       _currentState = UserVerifiedState(r.user);
     });
     notifyListeners();
@@ -162,12 +180,7 @@ class AuthManager with ChangeNotifier {
       notifyListeners();
       return null;
     }
-    _errorName = false;
-    _errorLastname = false;
-    _errorUsername = false;
-    _errorPasswordLength = false;
-    _errorPasswordMatch = false;
-    _errorBirthdate = false;
+    _resetErrorValues();
 
     final res = await authService.register(
         name: _name,
@@ -184,9 +197,19 @@ class AuthManager with ChangeNotifier {
         (r) {
       _saveInformationInLocal(
           token: r.token, username: r.user.username, email: r.user.email);
+      _savePasswordInLocal();
       _currentState = UserVerifiedState(r.user);
     });
     notifyListeners();
+  }
+
+  _resetErrorValues() {
+    _errorName = false;
+    _errorLastname = false;
+    _errorUsername = false;
+    _errorPasswordLength = false;
+    _errorPasswordMatch = false;
+    _errorBirthdate = false;
   }
 
   logout() async {
@@ -229,6 +252,42 @@ class AuthManager with ChangeNotifier {
     }
   }
 
+  updateUserData() async {
+    final res = await authService.updateUser(
+      name: (_name.isEmpty) ? null : _name,
+      lastname: (_lastname.isEmpty) ? null : _lastname,
+      username: (_usernameToLoginOrRegister == "" ||
+              _usernameToLoginOrRegister == null)
+          ? null
+          : _usernameToLoginOrRegister,
+      birthdate: (_birthDate.isEmpty) ? null : _birthDate,
+      email: (_emailToLoginOrRegister == "" || _emailToLoginOrRegister == null)
+          ? null
+          : _emailToLoginOrRegister,
+    );
+
+    if (res.isLeft()) {
+      return res.leftMap((l) => l);
+    }
+
+    res.fold((l) => null, (r) {
+      _saveInformationInLocal(username: r.username, email: r.email);
+      _user = r;
+      notifyListeners();
+    });
+  }
+
+  _savePasswordInLocal() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('password', _passwordToLoginOrRegister);
+  }
+
+  getPasswordFromLocal() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _password = prefs.getString('password')!;
+    notifyListeners();
+  }
+
   _saveInformationInLocal(
       {String? username, String? email, String? token}) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -237,14 +296,14 @@ class AuthManager with ChangeNotifier {
 
     if (username != null) {
       if (lastUsername != username) {
-        debugPrint('Guardando username $lastUsername');
+        debugPrint('Guardando username $username');
         prefs.setString('username', username);
       }
     }
 
     if (email != null) {
       if (lastEmail != null && lastEmail != email) {
-        debugPrint('Guardando email $lastEmail');
+        debugPrint('Guardando email $email');
         prefs.setString('email', email);
       }
     }

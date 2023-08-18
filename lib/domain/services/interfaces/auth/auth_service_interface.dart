@@ -17,4 +17,14 @@ abstract class AuthServiceInterface {
       required String passwordVerified});
 
   Future<Either<Failure, String>> logout();
+
+  Future<Either<Failure, User>> updateUser({
+    String? name,
+    String? lastname,
+    String? username,
+    String? birthdate,
+    String? email,
+  });
+  Future<Either<Failure, User>> updatePassword(
+      {required String password, required String passwordVerified});
 }

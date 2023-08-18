@@ -27,6 +27,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthdate": MessageLookupByLibrary.simpleMessage("Data de naixement"),
         "birthdatePlaceholder":
             MessageLookupByLibrary.simpleMessage("Escull la teva data"),
+        "chooseeEventDate":
+            MessageLookupByLibrary.simpleMessage("Escull la nova data"),
+        "congratulations": MessageLookupByLibrary.simpleMessage("Felicitats!"),
+        "createTicket": MessageLookupByLibrary.simpleMessage("Crear tiquet"),
+        "description": MessageLookupByLibrary.simpleMessage("Descripció"),
+        "editPersonalInformation":
+            MessageLookupByLibrary.simpleMessage("Editar informació personal"),
+        "editTicket": MessageLookupByLibrary.simpleMessage("Editar tiquet"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailError":
             MessageLookupByLibrary.simpleMessage("L\'email no és vàlid"),
@@ -40,6 +48,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "La contrasenya ha de tenir més de 8 caràcters"),
         "errorValidatePassword": MessageLookupByLibrary.simpleMessage(
             "Les contrasenyes no coincidèixen"),
+        "eventDate":
+            MessageLookupByLibrary.simpleMessage("Data de l\'esdeveniment"),
+        "everithingWentWell":
+            MessageLookupByLibrary.simpleMessage("Tot ha anat genial 😊!"),
         "fieldCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "Aquest camp no pot estar buit"),
         "filter": MessageLookupByLibrary.simpleMessage("Filtrar"),
@@ -48,22 +60,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "lastname": MessageLookupByLibrary.simpleMessage("Cognom"),
         "lastnamePlaceholder":
             MessageLookupByLibrary.simpleMessage("Escriu el teu cognom"),
+        "logout": MessageLookupByLibrary.simpleMessage("Tancar sessió"),
         "name": MessageLookupByLibrary.simpleMessage("Nomb"),
         "namePlaceholder":
             MessageLookupByLibrary.simpleMessage("Escriu el teu nom"),
         "or": MessageLookupByLibrary.simpleMessage("o"),
         "password": MessageLookupByLibrary.simpleMessage("Contrasenya"),
+        "passwordUpdate":
+            MessageLookupByLibrary.simpleMessage("Restablir contrasenya"),
+        "personalSettings":
+            MessageLookupByLibrary.simpleMessage("Configuració personal"),
+        "preview": MessageLookupByLibrary.simpleMessage("Previsualització"),
         "repeatPassword": MessageLookupByLibrary.simpleMessage(
             "Escriu de nou la teva contrasenya"),
         "searchTicket": MessageLookupByLibrary.simpleMessage("Buscar tiquet"),
+        "security": MessageLookupByLibrary.simpleMessage("Seguretat"),
+        "settings": MessageLookupByLibrary.simpleMessage("Configuració"),
         "signIn": MessageLookupByLibrary.simpleMessage("Iniciar sessió"),
         "signUp": MessageLookupByLibrary.simpleMessage("Registrar-se"),
         "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Alguna cosa ha anat malament 😣"),
+        "ticketName": MessageLookupByLibrary.simpleMessage("Nom del tiquet"),
+        "ticketPrice": MessageLookupByLibrary.simpleMessage("Preu del tiquet"),
+        "updateTicket":
+            MessageLookupByLibrary.simpleMessage("Actualitzar tiquet"),
         "username": MessageLookupByLibrary.simpleMessage("Nom d\'usuari"),
         "usernameExample":
             MessageLookupByLibrary.simpleMessage("ExempleUsuari"),
         "usernameOrEmail":
-            MessageLookupByLibrary.simpleMessage("Nom d\'usuari o email")
+            MessageLookupByLibrary.simpleMessage("Nom d\'usuari o email"),
+        "writeNewDescription":
+            MessageLookupByLibrary.simpleMessage("Escriu la nova descripció"),
+        "writeNewTicketName":
+            MessageLookupByLibrary.simpleMessage("Escriu el nou títol"),
+        "writeTicketPrice":
+            MessageLookupByLibrary.simpleMessage("Escriu el nou preu")
       };
 }

@@ -1,7 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:app_studiogenesis/pages/Tickets/creation/creation_ticket_page.dart';
 import 'package:app_studiogenesis/pages/settings/settings_page.dart';
-import 'package:app_studiogenesis/pages/tickets/tickets_page.dart';
+import 'package:app_studiogenesis/pages/ticket/creation/create_ticket_page.dart';
+import 'package:app_studiogenesis/pages/ticket/tickets_page.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
 
   final _pages = const <Widget>[
     TicketsPage(),
-    CreationTicketPage(),
+    CreateTicketPage(),
     SettingsPage()
   ];
 

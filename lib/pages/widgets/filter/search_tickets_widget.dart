@@ -1,5 +1,5 @@
 import 'package:app_studiogenesis/generated/l10n.dart';
-import 'package:app_studiogenesis/pages/Tickets/ticket_manager.dart';
+import 'package:app_studiogenesis/pages/ticket/ticket_manager.dart';
 import 'package:app_studiogenesis/pages/widgets/input_text.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_dimensions.dart';
 import 'package:flutter/material.dart';

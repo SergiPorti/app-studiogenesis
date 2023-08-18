@@ -80,6 +80,11 @@ class _RegisterFormState extends State<RegisterForm> {
                 inputBackgroundColor: Colors.transparent,
                 inputBorderColor: AppColors.secondaryBackgroundLogin,
                 placeHolder: S.of(context).birthdatePlaceholder,
+                sufixIcon: const Icon(
+                  Icons.calendar_month_outlined,
+                  size: 32,
+                  color: Colors.white,
+                ),
                 errorText: authManager.errorBirthdate
                     ? S.of(context).fieldCanNotBeEmpty
                     : null,

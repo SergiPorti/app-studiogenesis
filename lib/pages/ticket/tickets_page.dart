@@ -1,5 +1,5 @@
 import 'package:app_studiogenesis/domain/models/ticket/ticket.dart';
-import 'package:app_studiogenesis/pages/Tickets/ticket_manager.dart';
+import 'package:app_studiogenesis/pages/ticket/ticket_manager.dart';
 import 'package:app_studiogenesis/pages/language/language_manager.dart';
 import 'package:app_studiogenesis/pages/widgets/filter/search_tickets_widget.dart';
 import 'package:app_studiogenesis/pages/widgets/ticket/ticket_card.dart';
@@ -26,7 +26,17 @@ class TicketsPage extends StatelessWidget {
             case LoadingState:
               return const Center(child: CircularProgressIndicator());
             case OnErrorState:
-              return const TicketErrorWidget();
+              final String message =
+                  (manager.currentState as OnErrorState).message;
+              final String? extensionMessage =
+                  (manager.currentState as OnErrorState).extensionMessage;
+
+              return TicketErrorWidget(
+                message: message,
+                extensionMessage: extensionMessage,
+                onButtonPressed: () => manager.getTickets(),
+              );
+              
             case OnTicketsAchievedState:
               final List<Ticket> tickets =
                   (manager.currentState as OnTicketsAchievedState).tickets;
@@ -48,7 +58,11 @@ class TicketsPage extends StatelessWidget {
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
                           final ticket = tickets[index];
-                          return TicketCard(ticket);
+                          return TicketCard(
+                            ticket,
+                            onDeleteButtonPressed: () =>
+                                manager.deleteTicket(ticket.id),
+                          );
                         },
                         separatorBuilder: (context, index) =>
                             SizedBox(height: AppDimensions.main),

@@ -63,4 +63,42 @@ class AuthService implements AuthServiceInterface {
     final res = await api.logout();
     return res.fold((l) => Left(l), (r) => Right(r));
   }
+
+  @override
+  Future<Either<Failure, User>> updatePassword(
+      {required String password, required String passwordVerified}) async {
+    Map<String, String> map = {};
+    map['password'] = password;
+    map['password_confirmation'] = passwordVerified;
+
+    final res = await api.updatePassword(map);
+
+    return res.fold((l) => Left(l), (r) => Right(r));
+  }
+
+  @override
+  Future<Either<Failure, User>> updateUser(
+      {String? name,
+      String? lastname,
+      String? username,
+      String? birthdate,
+      String? email}) async {
+    Map<String, String> map = {};
+
+    if (name != null) {
+      map['name'] = name;
+    }
+
+    if (lastname != null) {
+      map['lastname'] = lastname;
+    }
+
+    birthdate != null ? map['birthdate'] = birthdate : null;
+    username != null ? map['username'] = username : null;
+    email != null ? map['email'] = email : null;
+
+    final res = await api.updateUser(map);
+
+    return res.fold((l) => Left(l), (r) => Right(r));
+  }
 }
