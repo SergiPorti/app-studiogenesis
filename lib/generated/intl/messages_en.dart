@@ -88,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ticketName": MessageLookupByLibrary.simpleMessage("Ticket name"),
         "ticketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
         "updateTicket": MessageLookupByLibrary.simpleMessage("Update ticket"),
+        "updateUser": MessageLookupByLibrary.simpleMessage("Update password"),
         "username": MessageLookupByLibrary.simpleMessage("Username"),
         "usernameExample":
             MessageLookupByLibrary.simpleMessage("ExampleUsername"),

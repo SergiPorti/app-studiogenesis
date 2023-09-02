@@ -50,5 +50,6 @@
     "security": "Seguridad",
     "passwordUpdate": "Restablecer la contraseña",
     "logout": "Cerrar sesión",
-    "passwordIncorrect": "Contraseña incorrecta"
+    "passwordIncorrect": "Contraseña incorrecta",
+    "updateUser": "Actualizar usuario"
 }

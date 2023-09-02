@@ -559,6 +559,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Update password`
+  String get updateUser {
+    return Intl.message(
+      'Update password',
+      name: 'updateUser',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -50,5 +50,6 @@
     "security": "Seguretat",
     "passwordUpdate": "Restablir contrasenya",
     "logout": "Tancar sessió",
-    "passwordIncorrect": "Contrasenya incorrecta"
+    "passwordIncorrect": "Contrasenya incorrecta",
+    "updateUser": "Actualitzar usuari"
 }

@@ -1,5 +1,4 @@
 import 'package:app_studiogenesis/di/locator.dart';
-import 'package:app_studiogenesis/domain/models/exception/failure.dart';
 import 'package:app_studiogenesis/domain/services/interfaces/auth/auth_manager.dart';
 import 'package:app_studiogenesis/generated/l10n.dart';
 import 'package:app_studiogenesis/navigation/navigation_handler.dart';
@@ -117,7 +116,7 @@ class SettingsUpdatePassword extends StatelessWidget {
                         onPressed: () async {
                           FocusScope.of(context).unfocus();
                           await manager.updatePassword().then((value) {
-                            if (value is! Failure) {
+                            if (manager.currentState is UserVerifiedState) {
                               defaultPopupAsync(context,
                                   title: S.of(context).congratulations,
                                   description: S.of(context).everithingWentWell,

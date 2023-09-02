@@ -74,7 +74,7 @@ class SettingsUpdateUser extends StatelessWidget {
                   });
                 },
                 color: AppColors.secondaryBackgroundLogin,
-                text: S.of(context).signIn,
+                text: S.of(context).updateUser,
                 expandWidth: true,
                 textStyle: TextStyle(
                     fontSize: AppDimensions.main,

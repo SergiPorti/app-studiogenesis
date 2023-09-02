@@ -90,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ticketPrice": MessageLookupByLibrary.simpleMessage("Preu del tiquet"),
         "updateTicket":
             MessageLookupByLibrary.simpleMessage("Actualitzar tiquet"),
+        "updateUser":
+            MessageLookupByLibrary.simpleMessage("Actualitzar usuari"),
         "username": MessageLookupByLibrary.simpleMessage("Nom d\'usuari"),
         "usernameExample":
             MessageLookupByLibrary.simpleMessage("ExempleUsuari"),

@@ -50,5 +50,6 @@
     "security": "Security",
     "passwordUpdate": "Password update",
     "logout": "Logout",
-    "passwordIncorrect": "Incorrect password"
+    "passwordIncorrect": "Incorrect password",
+    "updateUser": "Update password"
 }
