@@ -68,3 +68,50 @@ Future<T?> defaultPopupAsync<T>(BuildContext context,
     },
   );
 }
+
+Future<T?> imagePopupPicker<T>(BuildContext context,
+    {required String title,
+    required String galleryButtonText,
+    required String cameraButtontext,
+    required T Function() galleryButtonPressed,
+    required T Function() cameraButtonpressed}) async {
+  return await showDialog<T>(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        insetPadding: EdgeInsets.all(AppDimensions.main),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                  fontSize: AppDimensions.large,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
+            ),
+            SizedBox(width: AppDimensions.small),
+            GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: const Icon(
+                  Icons.close_rounded,
+                  size: 32,
+                ))
+          ],
+        ),
+        actions: [
+          MainButton(
+            text: galleryButtonText,
+            expandWidth: true,
+            onPressed: () => galleryButtonPressed.call(),
+          ),
+          SizedBox(height: AppDimensions.xmain),
+          MainButton(
+              text: cameraButtontext,
+              expandWidth: true,
+              onPressed: () => cameraButtonpressed.call()),
+        ],
+      );
+    },
+  );
+}

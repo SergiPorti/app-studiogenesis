@@ -51,5 +51,8 @@
     "passwordUpdate": "Password update",
     "logout": "Logout",
     "passwordIncorrect": "Incorrect password",
-    "updateUser": "Update password"
+    "updateUser": "Update password",
+    "selectProfileImage": "Select your profile image",
+    "gallery": "Gallery",
+    "camera": "Camera"
 }

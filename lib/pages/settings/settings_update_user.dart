@@ -1,4 +1,5 @@
-import 'package:app_studiogenesis/domain/models/exception/failure.dart';
+import 'dart:io';
+
 import 'package:app_studiogenesis/domain/models/user/user.dart';
 import 'package:app_studiogenesis/domain/services/interfaces/auth/auth_manager.dart';
 import 'package:app_studiogenesis/generated/l10n.dart';
@@ -41,6 +42,7 @@ class SettingsUpdateUser extends StatelessWidget {
             _dateController.text = _formatDate(context, user.birthDate);
           }
           return Scaffold(
+            backgroundColor: AppColors.generalBackground,
             appBar: AppBarDefault(
                 title: Text(
               S.of(context).personalSettings,
@@ -57,14 +59,19 @@ class SettingsUpdateUser extends StatelessWidget {
                 onPressed: () async {
                   FocusScope.of(context).unfocus();
                   await manager.updateUserData().then((value) {
-                    if (value is Failure) {
+                    if (manager.currentState is ApiErrorState) {
+                      final String message =
+                          (manager.currentState as ApiErrorState).message;
+                      final String? extensionMessage =
+                          (manager.currentState as ApiErrorState).serverError;
+                      final String descriptionMessage =
+                          "$message \n $extensionMessage";
                       defaultPopupAsync(context,
-                          title: value.message,
-                          description: value.extensionMessage,
+                          title: S.of(context).somethingWentWrong,
+                          description: descriptionMessage,
                           mainButtonText: S.of(context).goBack,
                           mainbuttonPressed: () => Navigator.pop(context));
                     } else {
-                      debugPrint('Estoy mas a dentro');
                       defaultPopupAsync(context,
                           title: S.of(context).congratulations,
                           description: S.of(context).everithingWentWell,
@@ -88,7 +95,40 @@ class SettingsUpdateUser extends StatelessWidget {
                     vertical: AppDimensions.extraLarge,
                     horizontal: AppDimensions.main),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    GestureDetector(
+                      onTap: () => imagePopupPicker(context,
+                          title: S.of(context).selectProfileImage,
+                          galleryButtonText: S.of(context).gallery,
+                          cameraButtontext: S.of(context).camera,
+                          galleryButtonPressed: () async {
+                        Navigator.pop(context);
+                        await manager.pickImageFromGallery();
+                      }, cameraButtonpressed: () async {
+                        Navigator.pop(context);
+                        await manager.pickImageFromCamera();
+                      }),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(100),
+                        child: Container(
+                          child: manager.image != null
+                              ? Image.file(
+                                  File(manager.image!.path),
+                                  fit: BoxFit.cover,
+                                  height: 100,
+                                  width: 100,
+                                )
+                              : Image.asset(
+                                  'assets/img/user_placeholder.jpg',
+                                  height: 100,
+                                  width: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: AppDimensions.large),
                     InputText(
                       label: S.of(context).name,
                       inputBackgroundColor: Colors.transparent,

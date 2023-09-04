@@ -51,5 +51,8 @@
     "passwordUpdate": "Restablir contrasenya",
     "logout": "Tancar sessió",
     "passwordIncorrect": "Contrasenya incorrecta",
-    "updateUser": "Actualitzar usuari"
+    "updateUser": "Actualitzar usuari",
+    "selectProfileImage": "Escull la teva imatge de perfil",
+    "gallery": "Galeria",
+    "camera": "Càmera"
 }

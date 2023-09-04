@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthdate": MessageLookupByLibrary.simpleMessage("Birthdate"),
         "birthdatePlaceholder":
             MessageLookupByLibrary.simpleMessage("Choose your birthdate"),
+        "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "chooseeEventDate":
             MessageLookupByLibrary.simpleMessage("Choose the new date"),
         "congratulations":
@@ -58,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fieldCanNotBeEmpty":
             MessageLookupByLibrary.simpleMessage("This field can not be empty"),
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
         "goBack": MessageLookupByLibrary.simpleMessage("Go back"),
         "helloWorld": MessageLookupByLibrary.simpleMessage("HelloWorld"),
         "lastname": MessageLookupByLibrary.simpleMessage("Lastname"),
@@ -80,6 +82,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Repeat your password"),
         "searchTicket": MessageLookupByLibrary.simpleMessage("Search ticket"),
         "security": MessageLookupByLibrary.simpleMessage("Security"),
+        "selectProfileImage":
+            MessageLookupByLibrary.simpleMessage("Select your profile image"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),

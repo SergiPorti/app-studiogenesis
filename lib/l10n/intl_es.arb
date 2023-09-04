@@ -51,5 +51,8 @@
     "passwordUpdate": "Restablecer la contraseña",
     "logout": "Cerrar sesión",
     "passwordIncorrect": "Contraseña incorrecta",
-    "updateUser": "Actualizar usuario"
+    "updateUser": "Actualizar usuario",
+    "selectProfileImage": "Elige tu foto de perfil",
+    "gallery": "Galería",
+    "camera": "Cámara"
 }

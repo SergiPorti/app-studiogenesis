@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "birthdate": MessageLookupByLibrary.simpleMessage("Data de naixement"),
         "birthdatePlaceholder":
             MessageLookupByLibrary.simpleMessage("Escull la teva data"),
+        "camera": MessageLookupByLibrary.simpleMessage("Càmera"),
         "chooseeEventDate":
             MessageLookupByLibrary.simpleMessage("Escull la nova data"),
         "congratulations": MessageLookupByLibrary.simpleMessage("Felicitats!"),
@@ -59,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fieldCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "Aquest camp no pot estar buit"),
         "filter": MessageLookupByLibrary.simpleMessage("Filtrar"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Galeria"),
         "goBack": MessageLookupByLibrary.simpleMessage("Tornar enrere"),
         "helloWorld": MessageLookupByLibrary.simpleMessage("HolaMon"),
         "lastname": MessageLookupByLibrary.simpleMessage("Cognom"),
@@ -81,6 +83,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Escriu de nou la teva contrasenya"),
         "searchTicket": MessageLookupByLibrary.simpleMessage("Buscar tiquet"),
         "security": MessageLookupByLibrary.simpleMessage("Seguretat"),
+        "selectProfileImage": MessageLookupByLibrary.simpleMessage(
+            "Escull la teva imatge de perfil"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuració"),
         "signIn": MessageLookupByLibrary.simpleMessage("Iniciar sessió"),
         "signUp": MessageLookupByLibrary.simpleMessage("Registrar-se"),

@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fecha de nacimiento"),
         "birthdatePlaceholder":
             MessageLookupByLibrary.simpleMessage("Elige tu fecha"),
+        "camera": MessageLookupByLibrary.simpleMessage("Cámara"),
         "chooseeEventDate":
             MessageLookupByLibrary.simpleMessage("Elige la nueva fecha"),
         "congratulations":
@@ -60,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fieldCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
             "Este campo no puede estar vacío"),
         "filter": MessageLookupByLibrary.simpleMessage("Filtrar"),
+        "gallery": MessageLookupByLibrary.simpleMessage("Galería"),
         "goBack": MessageLookupByLibrary.simpleMessage("Volver atrás"),
         "helloWorld": MessageLookupByLibrary.simpleMessage("HolaMundo"),
         "lastname": MessageLookupByLibrary.simpleMessage("Apellido"),
@@ -82,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Escribe de nuevo la contraseña"),
         "searchTicket": MessageLookupByLibrary.simpleMessage("Buscar tiquet"),
         "security": MessageLookupByLibrary.simpleMessage("Seguridad"),
+        "selectProfileImage":
+            MessageLookupByLibrary.simpleMessage("Elige tu foto de perfil"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuración"),
         "signIn": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
         "signUp": MessageLookupByLibrary.simpleMessage("Registrarse"),

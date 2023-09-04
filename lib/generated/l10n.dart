@@ -569,6 +569,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Select your profile image`
+  String get selectProfileImage {
+    return Intl.message(
+      'Select your profile image',
+      name: 'selectProfileImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message(
+      'Gallery',
+      name: 'gallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message(
+      'Camera',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
