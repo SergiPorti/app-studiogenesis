@@ -106,9 +106,10 @@ class ApiDataSource implements ApiDataSourceInterface {
       return Right(ticket);
     });
   }
-  
+
   @override
-  Future<Either<Failure, User>> updatePassword(Map<String, String> userData) async {
+  Future<Either<Failure, User>> updatePassword(
+      Map<String, String> userData) async {
     final res = await apiClient.post("update-password", userData);
 
     return res.fold((l) => Left(l), (r) {
@@ -116,10 +117,14 @@ class ApiDataSource implements ApiDataSourceInterface {
       return Right(user);
     });
   }
-  
+
   @override
-  Future<Either<Failure, User>> updateUser(Map<String, String> userData) async {
-    final res = await apiClient.post("update", userData);
+  Future<Either<Failure, User>> updateUser(
+      Map<String, String> userData, String? imagePath) async {
+    final res = await apiClient.multiPart("update",
+        data: userData,
+        filesPath: (imagePath != null) ? [imagePath] : null,
+        typeOfFile: (imagePath != null) ? "image" : "");
 
     return res.fold((l) => Left(l), (r) {
       final User user = User.fromJson(r["user"]);

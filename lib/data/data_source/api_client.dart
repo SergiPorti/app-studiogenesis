@@ -78,8 +78,8 @@ class ApiClient {
 
   Future<Either<Failure, Map<String, dynamic>>> multiPart(String path,
       {required Map<String, String> data,
-      required List<String> filesPath,
-      required String typeOfFile}) async {
+      List<String>? filesPath,
+      String typeOfFile = ""}) async {
     _verifyPathFormat(path);
     final url = "${Environment.ngrokApiHostUrl}$path";
     debugPrint(url);
@@ -89,9 +89,11 @@ class ApiClient {
 
     request.headers.addAll(await _buildHeaders(isMultipartRequest: true));
 
-    for (final filePath in filesPath) {
-      final file = await http.MultipartFile.fromPath(typeOfFile, filePath);
-      request.files.add(file);
+    if (filesPath != null) {
+      for (final filePath in filesPath) {
+        final file = await http.MultipartFile.fromPath(typeOfFile, filePath);
+        request.files.add(file);
+      }
     }
 
     final res = await request.send();
@@ -128,7 +130,7 @@ class ApiClient {
       "Content-Type": isMultipartRequest
           ? "application/json; boundary=----WebKitFormBoundaryyEmKNDsBKjB7QEqu"
           : "application/json",
-      "Host": Environment.ngrokHost
+      "Host": Environment.host
     };
 
     if (token.isNotEmpty) {

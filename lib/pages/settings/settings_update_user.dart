@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:app_studiogenesis/domain/models/user/user.dart';
 import 'package:app_studiogenesis/domain/services/interfaces/auth/auth_manager.dart';
+import 'package:app_studiogenesis/environment.dart';
 import 'package:app_studiogenesis/generated/l10n.dart';
 import 'package:app_studiogenesis/pages/language/language_manager.dart';
 import 'package:app_studiogenesis/pages/widgets/appbar/app_bar_default.dart';
@@ -10,6 +11,7 @@ import 'package:app_studiogenesis/pages/widgets/popup/default_popup.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_colors.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/app_dimensions.dart';
 import 'package:app_studiogenesis/pages/widgets/utils/main_button.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:intl/intl.dart';
@@ -109,16 +111,30 @@ class SettingsUpdateUser extends StatelessWidget {
                         Navigator.pop(context);
                         await manager.pickImageFromCamera();
                       }),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: Container(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                              color: AppColors.secondaryBackgroundLogin,
+                              width: 3),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
                           child: manager.image != null
-                              ? Image.file(
-                                  File(manager.image!.path),
-                                  fit: BoxFit.cover,
-                                  height: 100,
-                                  width: 100,
-                                )
+                              ? manager.isLocalFile
+                                  ? Image.file(
+                                      File(manager.image!.path),
+                                      fit: BoxFit.cover,
+                                      height: 100,
+                                      width: 100,
+                                    )
+                                  : CachedNetworkImage(
+                                      imageUrl:
+                                          '${Environment.ngrokImageUrl}${manager.image!.path}',
+                                      fit: BoxFit.cover,
+                                      height: 100,
+                                      width: 100,
+                                    )
                               : Image.asset(
                                   'assets/img/user_placeholder.jpg',
                                   height: 100,

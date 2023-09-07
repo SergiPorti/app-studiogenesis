@@ -4,6 +4,7 @@ import 'package:app_studiogenesis/domain/models/user/auth_user.dart';
 import 'package:app_studiogenesis/domain/models/user/user.dart';
 import 'package:app_studiogenesis/domain/services/interfaces/auth/auth_service_interface.dart';
 import 'package:dartz/dartz.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AuthService implements AuthServiceInterface {
   final ApiDataSource api = ApiDataSource();
@@ -82,7 +83,7 @@ class AuthService implements AuthServiceInterface {
       String? lastname,
       String? username,
       String? birthdate,
-      String? email}) async {
+      String? email, String? imagePath}) async {
     Map<String, String> map = {};
 
     if (name != null) {
@@ -97,7 +98,7 @@ class AuthService implements AuthServiceInterface {
     username != null ? map['username'] = username : null;
     email != null ? map['email'] = email : null;
 
-    final res = await api.updateUser(map);
+    final res = await api.updateUser(map, imagePath);
 
     return res.fold((l) => Left(l), (r) => Right(r));
   }

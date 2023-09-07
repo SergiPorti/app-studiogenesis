@@ -1,6 +1,7 @@
 import 'package:app_studiogenesis/domain/models/user/user.dart';
 import 'package:app_studiogenesis/domain/services/auth/auth_service.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthManager with ChangeNotifier {
@@ -32,6 +33,8 @@ class AuthManager with ChangeNotifier {
   String _password = "";
   String _passwordUpdateValidation = "";
 
+  XFile? _image;
+
   bool _errorPasswordLength = false;
   bool _emailError = false;
   bool _errorPasswordMatch = false;
@@ -40,6 +43,7 @@ class AuthManager with ChangeNotifier {
   bool _errorName = false;
   bool _errorBirthdate = false;
   bool _errorPasswordIncorrect = false;
+  bool _isLocalFile = false;
 
   AuthManagerState get currentState => _currentState;
 
@@ -49,6 +53,8 @@ class AuthManager with ChangeNotifier {
   String? get email => _email;
   String get password => _password;
 
+  XFile? get image => _image;
+
   bool get errorPasswordLength => _errorPasswordLength;
   bool get errorPasswordIncorrect => _errorPasswordIncorrect;
   bool get emailError => _emailError;
@@ -57,6 +63,7 @@ class AuthManager with ChangeNotifier {
   bool get errorLastname => _errorLastname;
   bool get errorName => _errorName;
   bool get errorBirthdate => _errorBirthdate;
+  bool get isLocalFile => _isLocalFile;
 
   _init() async {
     _currentState = LoadingState();
@@ -85,6 +92,10 @@ class AuthManager with ChangeNotifier {
     final res = await authService.me();
 
     res.fold((l) => null, (r) => _user = r);
+    if (_user?.image != null) {
+      _isLocalFile = false;
+      _image = XFile(_user!.image!);
+    }
     notifyListeners();
   }
 
@@ -284,13 +295,14 @@ class AuthManager with ChangeNotifier {
       email: (_emailToLoginOrRegister == "" || _emailToLoginOrRegister == null)
           ? null
           : _emailToLoginOrRegister,
+      imagePath: _image?.path,
     );
 
-    if (res.isLeft()) {
-      return res.leftMap((l) => l);
-    }
-
-    res.fold((l) => null, (r) {
+    res.fold((l) {
+      _currentState =
+          ApiErrorState(message: l.message, serverError: l.extensionMessage);
+      notifyListeners();
+    }, (r) {
       _saveInformationInLocal(username: r.username, email: r.email);
       _user = r;
       notifyListeners();
@@ -311,7 +323,7 @@ class AuthManager with ChangeNotifier {
     final res = await authService.updatePassword(
         password: _passwordToLoginOrRegister,
         passwordVerified: _passwordToRegisterVerification);
-  
+
     res.fold(
         (l) => _currentState =
             ApiErrorState(message: l.message, serverError: l.extensionMessage),
@@ -369,6 +381,24 @@ class AuthManager with ChangeNotifier {
 
   changeErrorPageStateToAnonymous() {
     _currentState = AnonymousUserState();
+    notifyListeners();
+  }
+
+  Future<void> pickImageFromGallery() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if (image == null) return;
+    _image = image;
+    _isLocalFile = true;
+    notifyListeners();
+  }
+
+  Future<void> pickImageFromCamera() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.camera);
+
+    if (image == null) return;
+    _image = image;
+    _isLocalFile = true;
     notifyListeners();
   }
 }
