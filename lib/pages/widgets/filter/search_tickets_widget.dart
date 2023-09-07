@@ -56,32 +56,12 @@ class _SearchTicketsWidgetState extends State<SearchTicketsWidget> {
                       )
                     ],
                   )
-                : Align(
+                : const Align(
                     alignment: Alignment.centerRight,
-                    child: Row(
-                      children: [
-                        Container(
-                          decoration: !isFilterTicketsPressed
-                              ? const BoxDecoration(
-                                  border: Border(
-                                      bottom: BorderSide(
-                                          color: Colors.yellow, width: 1)),
-                                )
-                              : null,
-                          child: Text(
-                            S.of(context).filter,
-                            style: TextStyle(
-                                fontSize: AppDimensions.large,
-                                color: Colors.yellow),
-                          ),
-                        ),
-                        SizedBox(width: AppDimensions.small),
-                        const Icon(
-                          Icons.arrow_drop_down,
-                          size: 28,
-                          color: Colors.yellow,
-                        )
-                      ],
+                    child: Icon(
+                      Icons.filter_list,
+                      size: 36,
+                      color: Colors.grey,
                     ),
                   ),
           ),
