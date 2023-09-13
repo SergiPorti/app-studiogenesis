@@ -23,7 +23,7 @@ class Ticket {
         images: _getImages(json),
       );
 
-  static _getImages(Map<String, dynamic> json) {
+  static List<String> _getImages(Map<String, dynamic> json) {
     final List<String> images = [];
     if (json["images"] != null) {
       images.add(json["images"].map((value) => value));
