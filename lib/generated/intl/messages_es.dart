@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Elige la nueva fecha"),
         "congratulations":
             MessageLookupByLibrary.simpleMessage("¡Felicidades!"),
-        "createTicket": MessageLookupByLibrary.simpleMessage("Creat tiquet"),
+        "createTicket": MessageLookupByLibrary.simpleMessage("Crear tiquet"),
         "currentPassword":
             MessageLookupByLibrary.simpleMessage("Contraseña actual"),
         "description": MessageLookupByLibrary.simpleMessage("Descripción"),
