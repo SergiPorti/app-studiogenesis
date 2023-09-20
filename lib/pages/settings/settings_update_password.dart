@@ -52,14 +52,14 @@ class SettingsUpdatePassword extends StatelessWidget {
                   child: Column(
                     children: [
                       InputText(
-                        label: S.of(context).currentPassword,
+                        label: S.of(context).enterPassword,
                         inputBackgroundColor: Colors.transparent,
                         obscureText: true,
                         inputBorderColor: AppColors.secondaryBackgroundLogin,
                         errorText: manager.errorPasswordIncorrect
                             ? S.of(context).passwordIncorrect
                             : null,
-                        placeHolder: S.of(context).enterNewPassword,
+                        placeHolder: S.of(context).password,
                         onChangedText: (value) =>
                             manager.onUpdatePasswordChanged(value),
                       ),
@@ -79,7 +79,7 @@ class SettingsUpdatePassword extends StatelessWidget {
                               ? const Icon(Icons.visibility)
                               : const Icon(Icons.visibility_off),
                         ),
-                        placeHolder: S.of(context).enterPassword,
+                        placeHolder: S.of(context).enterNewPassword,
                         onChangedText: (value) =>
                             manager.onPasswordChanged(value, true),
                       ),
