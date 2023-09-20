@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "personalSettings":
             MessageLookupByLibrary.simpleMessage("Personal settings"),
         "preview": MessageLookupByLibrary.simpleMessage("Preview"),
+        "profileImage": MessageLookupByLibrary.simpleMessage("Profile image"),
         "repeatPassword":
             MessageLookupByLibrary.simpleMessage("Repeat your password"),
         "searchTicket": MessageLookupByLibrary.simpleMessage("Search ticket"),

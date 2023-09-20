@@ -111,37 +111,48 @@ class SettingsUpdateUser extends StatelessWidget {
                         Navigator.pop(context);
                         await manager.pickImageFromCamera();
                       }),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                              color: AppColors.secondaryBackgroundLogin,
-                              width: 3),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: manager.image != null
-                              ? manager.isLocalFile
-                                  ? Image.file(
-                                      File(manager.image!.path),
-                                      fit: BoxFit.cover,
+                      child: Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                  color: AppColors.secondaryBackgroundLogin,
+                                  width: 3),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: manager.image != null
+                                  ? manager.isLocalFile
+                                      ? Image.file(
+                                          File(manager.image!.path),
+                                          fit: BoxFit.cover,
+                                          height: 100,
+                                          width: 100,
+                                        )
+                                      : CachedNetworkImage(
+                                          imageUrl:
+                                              '${Environment.ngrokImageUrl}${manager.image!.path}',
+                                          fit: BoxFit.cover,
+                                          height: 100,
+                                          width: 100,
+                                        )
+                                  : Image.asset(
+                                      'assets/img/user_placeholder.jpg',
                                       height: 100,
                                       width: 100,
-                                    )
-                                  : CachedNetworkImage(
-                                      imageUrl:
-                                          '${Environment.ngrokImageUrl}${manager.image!.path}',
                                       fit: BoxFit.cover,
-                                      height: 100,
-                                      width: 100,
-                                    )
-                              : Image.asset(
-                                  'assets/img/user_placeholder.jpg',
-                                  height: 100,
-                                  width: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                        ),
+                                    ),
+                            ),
+                          ),
+                          SizedBox(width: AppDimensions.large),
+                          Text(
+                            S.of(context).profileImage,
+                            style: TextStyle(
+                                fontSize: AppDimensions.large,
+                                fontWeight: FontWeight.w600, ),
+                          )
+                        ],
                       ),
                     ),
                     SizedBox(height: AppDimensions.large),

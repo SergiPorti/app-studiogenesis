@@ -53,6 +53,7 @@
     "passwordIncorrect": "Contraseña incorrecta",
     "updateUser": "Actualizar usuario",
     "selectProfileImage": "Elige tu foto de perfil",
+    "profileImage": "Imagen de perfil",
     "gallery": "Galería",
     "camera": "Cámara"
 }

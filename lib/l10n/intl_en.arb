@@ -53,6 +53,7 @@
     "passwordIncorrect": "Incorrect password",
     "updateUser": "Update password",
     "selectProfileImage": "Select your profile image",
+    "profileImage": "Profile image",
     "gallery": "Gallery",
     "camera": "Camera"
 }

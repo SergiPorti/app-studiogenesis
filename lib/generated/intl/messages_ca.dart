@@ -79,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "personalSettings":
             MessageLookupByLibrary.simpleMessage("Configuració personal"),
         "preview": MessageLookupByLibrary.simpleMessage("Previsualització"),
+        "profileImage":
+            MessageLookupByLibrary.simpleMessage("Imatge de perfil"),
         "repeatPassword": MessageLookupByLibrary.simpleMessage(
             "Escriu de nou la teva contrasenya"),
         "searchTicket": MessageLookupByLibrary.simpleMessage("Buscar tiquet"),

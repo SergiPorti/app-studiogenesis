@@ -580,6 +580,16 @@ class S {
     );
   }
 
+  /// `Profile image`
+  String get profileImage {
+    return Intl.message(
+      'Profile image',
+      name: 'profileImage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Gallery`
   String get gallery {
     return Intl.message(
