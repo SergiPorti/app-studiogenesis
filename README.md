@@ -1,4 +1,4 @@
-## APP en Flutter per a prova tècnica
+# APP en Flutter per a prova tècnica
 
 ## Aquesta app està montada 100% per mi
 
