@@ -1,16 +1,12 @@
-# app_studiogenesis
+## APP en Flutter per a prova tècnica
 
-A new Flutter project.
+#Aquesta app està montada 100% per mi
 
-## Getting Started
+<p>La app té l'arxiu environment.dart on es veuràn les rutes per fer les peticions al servidor.</p>
 
-This project is a starting point for a Flutter application.
+#Important
 
-A few resources to get you started if this is your first Flutter project:
+<p>Si es vol intentar fer peticions al servidor, s'haurà d'utilitzar la ruta predefinida de localhost ja que per poder fer peticions al servidor en local s'ha d'accedir via la IP del dispositiu local el qual ja està definit en la variable.</p>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p>Jo vaig fer aquesta prova tècnica finalment amb NGROK per poder accedir remotament amb un servidor generat i suportat per NGROK, per això hi han més rutes com per exemple "HOST", "NGROKHOST", etc.
+En cas de fer un servidor de Ngrok, només s'haurà de canviar la ruta en "host" i "ngrokhost" per el respectiu, que generi ngrok. En "ngrokHost" anirà la ruta completa (amb el https://), i en "host" el que seria la ruta del host generat.</p>
